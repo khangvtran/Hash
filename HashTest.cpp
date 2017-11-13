@@ -39,7 +39,13 @@ int main() {
 	// Test countBucket
 	cout << ht.countBucket(9) << endl;
 
-	cout << endl <<  "********* printBucket ********" << endl;
+	cout << endl <<  "********* Test search and remove ********" << endl;
+	cout << ht.search(hg) << endl;
+	ht.remove(hg);
+	cout << ht.search(hg) << endl;
+
+
+	cout << endl <<  "********* Test printBucket ********" << endl;
 	// test printBucket (also tested the << overload of Book.h)
 	ht.printBucket(cout, 9);
 
@@ -69,7 +75,15 @@ int HashTable::countBucket(int index) const
 	return Table[index].getSize();
 }
 
+int HashTable::search(Book b) const
+{
+	string key = b.get_title() + b.get_author();
+	int index = hash(key);
 
+	if (Table[index].isEmpty()) return -1;
+	else if (Table[index].linearSearch(b) == -1) return -1;
+	else return index;
+}
 
 void HashTable::printBucket(ostream& out, int index) const
 {
@@ -105,3 +119,20 @@ void HashTable::insert(Book b)
 	Table[index].insertStop(b);
 }
 
+void HashTable::remove(Book b)
+{
+//removes b from the table
+//calls the hash function on the key to determine
+//the correct bucket
+//pre: b is in the table
+	assert(search(b) != -1);
+	int index = search(b);
+	int Index_In_Bucket = Table[index].linearSearch(b);
+	Table[index].pointIterator();
+	for (int i = 1; i < Index_In_Bucket; i++)
+	{
+		Table[index].advanceIterator();
+	}
+	Table[index].removeIterator();
+
+}
