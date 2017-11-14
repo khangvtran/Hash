@@ -44,14 +44,14 @@ void HashTable::printBucket(ostream& out, int index) const
 
 void HashTable::printTable(ostream& out) const
 {
-	cout << "Books in the Catalogue:" << endl;
+	out << "Books in the Catalogue:" << endl;
 	for (int i = 0; i < SIZE; i++)
 	{
 		if (!Table[i].isEmpty())
 		{
-			cout << "Group " << i+1 << endl;
-			cout << Table[i].getStart() << endl;
-			cout << "+" << countBucket(i) - 1 <<" more similar book(s)" << endl << endl << endl;
+			out << "Group " << i+1 << endl;
+			out << Table[i].getStart() << endl;
+			out << "+" << countBucket(i) - 1 <<" more similar book(s)" << endl << endl << endl;
 			//cout << "+" << Table.countBucket(i) - 1 <<" more similar book(s)" << endl << endl << endl;
 		}
 	}
@@ -73,7 +73,7 @@ void HashTable::remove(Book b)
 {
 //removes b from the table
 //calls the hash function on the key to determine
-//the correct bucket
+//the correct bucketƒ
 //pre: b is in the table
 	assert(search(b) != -1);
 	int index = search(b);

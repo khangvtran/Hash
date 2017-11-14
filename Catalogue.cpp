@@ -90,19 +90,42 @@ int main()
 			Book newBook(title, author, price, isbn);
 			ht.insert(newBook);
 			cout << title << " has been added to the catalogue" << endl << endl;
+			cin.ignore();
 			break;
 		}
 		case 4:
-			cout << "123" << endl;
+		{
+			cout << "Enter the title of the book to remove: ";
+			getline(cin, title);
+			cout << "Enter the author: ";
+			getline(cin, author);
+			Book bookToBeRemoved(title, author, 1, 1234567);
+			ht.remove(bookToBeRemoved);
+			cout << title << " has been removed from the catalogue" << endl << endl;
 			break;
-		case 5:
-			cout << "456" << endl;
-			break;
-
 		}
 
+		case 5:
+		{
+			cout << "Enter the title of the book to search: ";
+			getline(cin, title);
+			cout << "Enter the author: ";
+			getline(cin, author);
+			Book bookToBeSearchedFor(title, author, 1, 1234567);
+			int searchResult = ht.search(bookToBeSearchedFor);
+			if (searchResult == -1)
+			{
+				cout << title <<" is not in the catalogue." << endl;
+			}
+			else cout << title << " is found at group " << searchResult+1 << " (or index " << searchResult << ")"<< endl;
+			cout << endl;
+			break;
+		}
+		case 6:
+			cout << endl << "Happy Reading!" << endl;
+			break;
+		}
 	}
-
 
 	// close the file
 	fin.close();
@@ -115,7 +138,7 @@ void promptUser()
 	cout << "1. Browse catalogue" << endl;
 	cout << "2. Explore a book group (1-10)" << endl;
 	cout << "3. Insert a new book" << endl;
-	cout <<  "4. Remove a book" << endl;
+	cout << "4. Remove a book" << endl;
 	cout << "5. Search for a book" << endl;
 	cout << "6. Quit" << endl;
 	cout << endl;
@@ -124,6 +147,159 @@ void promptUser()
 
 
 
+/*
+Welcome to the Best Reads App!
+What would you like to do?
+1. Browse catalogue
+2. Explore a book group (1-10)
+3. Insert a new book
+4. Remove a book
+5. Search for a book
+6. Quit
+
+Enter your choice: 1
+Books in the Catalogue:
+Group 1
+Bleak House by Charles Dickens
+$8.99
+ISBN#: 3567897
+
++1 more similar book(s)
+
+
+Group 3
+Ramona Blue by Julie Murphy
+$9.99
+ISBN#: 9328311
+
++0 more similar book(s)
+
+
+Group 4
+The Time in Between by Maria Duenas
+$9.86
+ISBN#: 4345344
+
++3 more similar book(s)
+
+
+Group 5
+Middlemarch by George Elliot
+$12.5
+ISBN#: 1256743
+
++0 more similar book(s)
+
+
+Group 6
+A Face like Glass by Frances Hardinge
+$15.95
+ISBN#: 4455443
+
++2 more similar book(s)
+
+
+Group 7
+The Woman in White by Wilkie Collins
+$10.75
+ISBN#: 3256789
+
++0 more similar book(s)
+
+
+Group 10
+A Room with a View by E.M. Forster
+$7.5
+ISBN#: 1177889
+
++2 more similar book(s)
+
+
+What would you like to do?
+1. Browse catalogue
+2. Explore a book group (1-10)
+3. Insert a new book
+4. Remove a book
+5. Search for a book
+6. Quit
+
+Enter your choice: 3
+Enter the title: Harry Potter
+Enter the author: JK Rowling
+Enter the price: 1
+Enter the isbn: 1234567
+Harry Potter has been added to the catalogue
+
+
+What would you like to do?
+1. Browse catalogue
+2. Explore a book group (1-10)
+3. Insert a new book
+4. Remove a book
+5. Search for a book
+6. Quit
+
+Enter your choice: 5
+Enter the title of the book to search: Harry Potter
+Enter the author: JK Rowling
+Harry Potter is found at group 8 (or index 7)
+
+What would you like to do?
+1. Browse catalogue
+2. Explore a book group (1-10)
+3. Insert a new book
+4. Remove a book
+5. Search for a book
+6. Quit
+
+Enter your choice: 2
+Enter the group number (1-10): 8
+
+The books in this group are:
+
+Harry Potter by JK Rowling
+$1
+ISBN#: 1234567
+
+
+What would you like to do?
+1. Browse catalogue
+2. Explore a book group (1-10)
+3. Insert a new book
+4. Remove a book
+5. Search for a book
+6. Quit
+
+Enter your choice: 4
+Enter the title of the book to remove: Harry Potter
+Enter the author: JK Rowling
+Harry Potter has been removed from the catalogue
+
+What would you like to do?
+1. Browse catalogue
+2. Explore a book group (1-10)
+3. Insert a new book
+4. Remove a book
+5. Search for a book
+6. Quit
+
+Enter your choice: 5
+Enter the title of the book to search: Harry Potter
+Enter the author: JK Rowling
+Harry Potter is not in the catalogue.
+
+What would you like to do?
+1. Browse catalogue
+2. Explore a book group (1-10)
+3. Insert a new book
+4. Remove a book
+5. Search for a book
+6. Quit
+
+Enter your choice: 6
+
+Happy Reading!
+*/
 
 
 
