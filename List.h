@@ -2,7 +2,7 @@
  * List.h
  *
  *  Created on: Nov 11, 2017
- *      Author: KVTran
+ *      Author: Khang Vinh Tran, Tri Doan
  */
 
 #ifndef LIST_H_

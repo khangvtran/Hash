@@ -35,7 +35,6 @@ private:
     Node* root;
 
 
-
     /**Private helper functions*/
     void insertNode(Node* root, bstdata data);
     //private helper function for insert
@@ -277,7 +276,7 @@ void BST<bstdata>::remove(bstdata data)
 {
 	assert(!isEmpty());
 	assert(search(data));      // isEmpty() is actually already enforced in this
-	deleteNode(root, data);
+	root = deleteNode(root, data);
 }
 
 template <class bstdata>

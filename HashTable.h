@@ -2,7 +2,7 @@
  * HashTable.h
  *
  *  Created on: Nov 11, 2017
- *      Author: KVTran
+ *      Author: Khang Vinh Tran
  */
 
 #ifndef HASHTABLE_H_

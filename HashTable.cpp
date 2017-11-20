@@ -2,7 +2,7 @@
  * HashTable.cpp
  *
  *  Created on: Nov 13, 2017
- *      Author: KVTran
+ *      Author: Khang Vinh Tran, Tri Doan
  */
 
 

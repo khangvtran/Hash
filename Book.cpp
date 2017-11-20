@@ -2,7 +2,7 @@
  * Book.cpp
  *
  *  Created on: Nov 11, 2017
- *      Author: KVTran
+ *      Author: Khang Vinh Tran, Tri Doan
  */
 
 
@@ -11,6 +11,7 @@
 #include "Book.h"
 #include <iostream>
 #include <iomanip>
+
 
 Book::Book():title(""), author(""), price(0.0), isbn(0){};
 
@@ -62,7 +63,7 @@ void Book::set_price(double p) {
 ostream& operator<<(ostream& os, const Book& book)
 {
 	os << book.title << " by " << book.author << endl;
-	os << "$" << book.price << endl;
+	os << "$" << fixed << setprecision(2)<<book.price << endl;
 	os << "ISBN#: " << book.isbn << endl;
 	return os;
 }

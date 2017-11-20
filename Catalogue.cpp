@@ -2,8 +2,9 @@
  * Catalogue.cpp
  *
  *  Created on: Nov 13, 2017
- *      Author: KVTran
+ *      Author: Khang Vinh Tran, Tri Doan
  */
+
 
 
 
@@ -147,6 +148,7 @@ void promptUser()
 
 
 
+
 /*
 Welcome to the Best Reads App!
 What would you like to do?
@@ -185,7 +187,7 @@ ISBN#: 4345344
 
 Group 5
 Middlemarch by George Elliot
-$12.5
+$12.50
 ISBN#: 1256743
 
 +0 more similar book(s)
@@ -209,7 +211,7 @@ ISBN#: 3256789
 
 Group 10
 A Room with a View by E.M. Forster
-$7.5
+$7.50
 ISBN#: 1177889
 
 +2 more similar book(s)
